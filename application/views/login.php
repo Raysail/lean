@@ -33,10 +33,14 @@
 										<option value="4">Publisher</option>
                           		  </select>
                                 </p>
-								<span class="keep_me_login"> <label class="checkbox">
-									<input type="checkbox" name="user_remember" value="1"  id="loginkeeping" <?php if($this->input->cookie('remember_me')=='1'){ echo 'checked="checked"';}?>  />Keep me logged in
+								<span >
+ 									<input class="button--raysail" type="submit" name="submit" value="Log in" id="btn_log_in" />
+								 </span>
+							<!--	<span class="keep_me_login"> <label class="checkbox">
+									<input type="checkbox" name="user_remember" value="1"  id="loginkeeping" <?php //if($this->input->cookie('remember_me')=='1'){ echo 'checked="checked"';}?>  />Keep me logged in
 								 </label>
 								 </span>
+								 -->
 							 </form>	
 								<div class="login_bottom_two">
          

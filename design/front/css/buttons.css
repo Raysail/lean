@@ -1484,3 +1484,22 @@ button.button.button--aylen.button--border-thick.button--inverted.button--text-u
 	border-color: #3f51b5;
 	color: #fff;
 }
+.button--raysail{
+	background: #ee4723;
+	font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0px 0px;
+    font-weight: 100;
+    width: 100%;
+    float: left;
+	border-radius: 20px;
+}
+.button--raysail:hover {
+	background: #fedd7a;
+    color: #ee4723;
+    width: 100%;
+    float: left;
+	border-radius: 20px;
+}

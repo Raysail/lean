@@ -1154,10 +1154,12 @@ $(document).on('change', '#user_type', function(event){
 var form = $( "#login_frm" );					
 form.validate();
 form.valid();
+/*
 	if(form.valid())
 	{
 		$( "#login_frm" ).submit();
 	}
+*/
 });
 </script>
 <?php
