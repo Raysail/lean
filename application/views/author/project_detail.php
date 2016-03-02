@@ -263,7 +263,6 @@
 							<img src="<?php echo base_url().$src1 ;?>">
 						</div>
 						<div class="authr-dshbrd-right">										  
-							<p><?php echo nl2br($msg_list->message);?></p>
 							<?php if(!empty($msg_list->proof_file)){?>
 					<p> <a target="_blank"  href="<?php echo base_url().$msg_list->proof_file;?>">Attached Proof File</a><br /><br /></p>
 					<?php }?>
@@ -306,7 +305,7 @@
 								</form>
 								<a href="#" onclick="meg_submit('mes_send_<?php echo $article_data->art_no;?>');">Send Message to Editor</a>
 								<a href="<?php echo base_url().'update-mainscript-edtrequest/'.$article_data->art_no;?>">Update Manuscript</a>
-							</div>
+							</div><br><br>
 								<?php }?>		
 								
 							<?php if( ($msg_list->art_status=='7') &&($article_data->art_status=='7') && ($msg_list->from_type=='E') && ($msg_list->again_send==0))	{?>
@@ -319,9 +318,10 @@
 							
 								
 								<a href="#" onclick="meg_submit('mes_send_<?php echo $article_data->art_no;?>');">Send Message to Editor</a>
-								<a href="<?php echo base_url().'revission-update-mainscript/'.$article_data->art_no;?>">Update Manuscript</a>
-							</div>
+								<a href="<?php echo base_url().'revission-update-mainscript/'.$article_data->art_no;?>">Submit Revised Manuscript</a>
+							</div><br><br>
 								<?php }?>					
+							<p><?php echo nl2br($msg_list->message);?></p>
 						</div>
 					</div>
 					<?php
