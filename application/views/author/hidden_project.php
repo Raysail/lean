@@ -44,6 +44,7 @@
 						<?php }?>
                 	</div>
                     
+	            <a style="color:#000000;" href="<?php echo base_url().'view_project/'.$pro_list->art_no;?>">
                     <div class="wlcm-txt-box">
                        	<p> <?php echo $pro_list->art_fulltitle;?></p>
                     </div>
@@ -74,6 +75,7 @@
                             <span> <?php echo $pro_list->art_dateadd;?></span>
                         </div>
                     </div>
+		    </a>
                     
                     <div class="wlcm-row4">
                     	<a href="<?php echo base_url().'view_project/'.$pro_list->art_no;?>"> View Project</a>
