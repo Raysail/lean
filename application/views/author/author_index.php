@@ -12,6 +12,9 @@
 			
 		 <?php if(!empty($pro_listing)){
 			 	foreach($pro_listing as $pro_list){
+					if($pro_list->art_status < 0){
+						continue;
+					}
 				$count_message = 0;
 				$where_message = '(art_id="'.$pro_list->art_id.'")';
 				$count_message  = $this->user_model->check_no_rec('tbl_article_message',$where_message);

@@ -58,10 +58,17 @@
 						}?></span>
                     </div>
 					<?php if($article_data->art_status==0){?>
-					<div class="authr-tyt-date">
-                    		<a href="<?php echo base_url().'update-mainscript/'.$article_data->art_no;?>"> Edit</a>
-                    </div>
+					<div style="margin-right:2px" class="authr-tyt-date">
+                    	<a href="<?php echo base_url().'update-mainscript/'.$article_data->art_no;?>"> Edit</a>
+					</div>
 					<?php }?>
+					<?php if($article_data->art_status == 4){?>
+					<div class="authr-tyt-date">
+                    	<a id ="delete" href="#"> Delete</a>
+                    	<input id ="delete_art_no" type="hidden" value="<?php echo $article_data->art_no; ?>" />
+					</div>
+					<?php }?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -362,4 +369,23 @@
 		
 		document.getElementById(frm_name).submit();
 	}
+
+	$(document).on('click', '#delete', function(event){
+
+		var r= confirm('Are you sure you want to delete your this project?');
+		if( r==true ){
+
+		var art_no = $('#delete_art_no').val();
+		var data= 'art_no='+art_no;
+		url =  "http://www.leancorrosion.com/article/delete_article";
+		$.post( url, data, function( result ) {
+			if(result == 1){
+				alert("Success");
+				window.location.href="http://www.leancorrosion.com/user-dashboard"; 
+			} else{
+				alert("Sorry, your request failed, please refresh to retry!");
+			}
+			});
+		}
+	});
 	</script>

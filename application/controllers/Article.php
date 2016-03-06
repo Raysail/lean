@@ -2340,5 +2340,29 @@ leancorrosion@lean.com<br>
 				echo $art_id;	
 	}
 	
+	public function delete_article() {
+		$art_no = 0;
+		extract($this->input->post());
+		$article_data =$this->user_model->get_row_with_con('tbl_article', array('art_no' => $art_no));
+		if(empty($article_data)) {
+			echo -1;
+		}
+		$user_id = $this->session->userdata( 'userid' );
+		if($article_data->art_userid != $user_id) {
+			echo -2;
+		}
+		if($article_data->art_status < 0) {
+			echo -3;
+		}
+		$art_status = -1;
+		$data_update = array('art_status' => $art_status);
+		$where = array('art_id' => $article_data->art_id);
+		$query = $this->user_model->update_query($data_update, 'tbl_article', $where);
+		if($query){
+			echo 1;
+		} else {
+			echo 0;
+		}
+	}
 }
 ?>

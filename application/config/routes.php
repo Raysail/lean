@@ -213,6 +213,7 @@ $route['update-mainscript-edtrequest/(:any)']="article/update_article/$1";
 
 $route['hidden-project']="article/hidden_article_list";
 
+$route['delete-mainscript/(:any)']="article/delete_article/$1";
 
 /* EDITOR SECTION ROUTE*/
 
