@@ -68,6 +68,11 @@ function showimagepreview_comp(input) {
                $('#imgprvw_comp').attr('width','100');
                }
                filerdr.readAsDataURL(input.files[0]);
+			   var upload = $('#submit_scheme_file');
+			   var ret = upload.click();
+			   if(ret != false){
+				  alert("Upload Success");
+			   };
        }
 }
 </script>	
