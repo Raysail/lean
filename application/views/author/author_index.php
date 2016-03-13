@@ -23,6 +23,11 @@
         	<div class="col-md-4">
             	<div class="wlcm-usr-div">
 				
+					<?php if($pro_list->art_status == 0 || $pro_list->art_status == 1 || $pro_list->art_status == 4 || $pro_list->art_status == 8){?>
+                	<div style="position:absolute;background-color:#EE4723;margin:0px;top:1px;right:16px;">
+                    	<a id="<?php echo $pro_list->art_no;?>" style="font-family:none;color:#fff;text-decoration:none" href='javascript:delete_project("<?php echo $pro_list->art_no;?>");'>×</a>
+                    </div>
+					<?php }?>
 					<?php if($count_message>0){?>
                 	<div class="short-tip">
                     	<span><?php echo $count_message;?></span>
@@ -118,4 +123,20 @@ $(document).on('click', '#art_hidden', function(event){
 		});
 
 });
+
+function delete_project (art_no) {
+		var r= confirm('Are you sure you want to delete your this project?');
+		if( r==true ){
+			var data= 'art_no='+art_no;
+			url =  "http://www.leancorrosion.com/article/delete_article";
+			$.post( url, data, function( result ) {
+				if(result == 1){
+					alert("Success");
+					window.location.href="http://www.leancorrosion.com/user-dashboard"; 
+				} else{
+					alert("Sorry, your request failed, please refresh to retry!");
+				}
+			});
+		}
+}
 </script>
