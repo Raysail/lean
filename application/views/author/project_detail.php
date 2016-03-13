@@ -196,6 +196,13 @@
 				
 							if(!empty($reviewer_reivew))
 							{
+								$i = 1;
+								$reviewers = array();
+								foreach($reviewer_reivew as $row => $a){
+									if(!isset($reviewers[$a->user_fname])){
+										$reviewers[$a->user_fname] = $i++;
+									}
+								}
 								foreach($reviewer_reivew as $review_list)
 								{
 						?>
@@ -215,7 +222,7 @@
 										<p>
 											<?php echo nl2br($review_list->sr_report) ;?>
 										</p>
-										<p>Reviewer Name: <?php echo $review_list->user_fname;?></p>
+										<p>Reviewer Name: Reviewer <?php echo $reviewers[$review_list->user_fname];?></p>
 									
 										
 									</div>
@@ -243,7 +250,7 @@
 									</div>
 										<p>&nbsp;the Manuscript for review.</p>
 											<br /><br />  
-										<p>Reviewer Name: <?php echo $review_list->user_fname;?></p>
+										<p>Reviewer Name: Reviewer <?php echo $reviewers[$review_list->user_fname];?></p>
 									
 										
 									</div>
