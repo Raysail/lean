@@ -23,8 +23,9 @@
         	<div class="col-md-4">
             	<div class="wlcm-usr-div">
 				
-					<?php if($pro_list->art_status == 0 || $pro_list->art_status == 1 || $pro_list->art_status == 4 || $pro_list->art_status == 8){?>
-                	<div style="position:absolute;background-color:#EE4723;margin:0px;top:1px;right:16px;">
+					<?php if($pro_list->art_status == 0 || $pro_list->art_status == 1){?>
+                	<div style="position:absolute;background-color:#EE4723;padding-right: 4px;
+					    padding-left: 4px;margin:0px;top:1px;right:16px;">
                     	<a id="<?php echo $pro_list->art_no;?>" style="font-family:none;color:#fff;text-decoration:none" href='javascript:delete_project("<?php echo $pro_list->art_no;?>");'>×</a>
                     </div>
 					<?php }?>

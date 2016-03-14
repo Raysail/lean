@@ -62,7 +62,7 @@
                     	<a href="<?php echo base_url().'update-mainscript/'.$article_data->art_no;?>"> Edit</a>
 					</div>
 					<?php }?>
-					<?php if($article_data->art_status == 0 || $article_data->art_status == 1 || $article_data->art_status == 4 || $article_data->art_status == 8){?>
+					<?php if($article_data->art_status == 0 || $article_data->art_status == 1){?>
 					<div class="authr-tyt-date">
                     	<a id ="delete" href="#"> Delete</a>
                     	<input id ="delete_art_no" type="hidden" value="<?php echo $article_data->art_no; ?>" />
