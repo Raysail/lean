@@ -68,6 +68,11 @@ function showimagepreview_comp(input) {
                $('#imgprvw_comp').attr('width','100');
                }
                filerdr.readAsDataURL(input.files[0]);
+			   var upload = $('#submit_scheme_file');
+			   var ret = upload.click();
+			   if(ret != false){
+				   alert("Upload Success");
+			   };
        }
 }
 </script>
@@ -318,7 +323,7 @@ function showimagepreview_comp(input) {
                             </div>
                           </div>
                           <div class="col-md-3">
-							 <a href="#" data-toggle="tab" data-act-tab="f" data-act-li="5" data-act-curt="e" class="good-btn" data-id="step_5" id="submit_scheme_file" >Upload</a>
+							 <a href="#" data-toggle="tab" data-act-tab="f" data-act-li="5" data-act-curt="e" class="" data-id="step_5" id="submit_scheme_file" ></a>
 							 
                           </div>
                         </div>
