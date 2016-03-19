@@ -136,12 +136,14 @@ class  Article extends CI_Controller {
        $art_response='';
 	   
 	   $data_update = '';
+	   if(isset($_POST['art_id'])&& ($_POST['art_id']>0)) {
+		   $source_article = $this->user_model->get_row_with_con('tbl_article',
+				   array('art_id'=>$_POST['art_id']));		
+	   }
 		if(isset($_POST['art_type']) && (!empty($_POST['art_type'])))
 		{
 			if(isset($_POST['art_id'])&& ($_POST['art_id']>0))
 			{
-				$source_article = $this->user_model->get_row_with_con('tbl_article',
-							            array('art_id'=>$_POST['art_id']));		
 			   $art_type=$_POST['art_type'];
 			  $data_update = array('art_type'=>$art_type,'art_userid'=>$user_id,'art_update'=>date('Y-m-d'));
 			  
@@ -262,7 +264,7 @@ class  Article extends CI_Controller {
 						{
 							$data = $this->upload->data();
 							$art_cover = $data['file_name'];
-							if(!in_array($source_article['art_status'], array(2,5,6,7,9))){	
+							if(!in_array($source_article->art_status, array(2,5,6,7,9))){	
 							$data_update['art_cover'] = $art_cover;
 							} else{
 								$data_update['art_cover_r'] = $art_cover;
@@ -288,7 +290,7 @@ class  Article extends CI_Controller {
 							$data = $this->upload->data();
 							$art_menuscript = $data['file_name'];
 							
-							if(!in_array($source_article['art_status'], array(2,5,6,7,9))){	
+							if(!in_array($source_article->art_status, array(2,5,6,7,9))){	
 							$data_update['art_menuscript'] = $art_menuscript;
 							} else{
 								$data_update['art_menuscript_r'] = $art_menuscript;
@@ -315,7 +317,7 @@ class  Article extends CI_Controller {
 							$data = $this->upload->data();
 							$art_figure = $data['file_name'];
 							
-							if(!in_array($source_article['art_status'], array(2,5,6,7,9))){	
+							if(!in_array($source_article->art_status, array(2,5,6,7,9))){	
 							$data_update['art_figure'] = $art_figure;
 							} else{
 								$data_update['art_figure_r'] = $art_figure;
@@ -341,7 +343,7 @@ class  Article extends CI_Controller {
 							$data = $this->upload->data();
 							$art_slide = $data['file_name'];
 							
-							if(!in_array($source_article['art_status'], array(2,5,6,7,9))){	
+							if(!in_array($source_article->art_status, array(2,5,6,7,9))){	
 							$data_update['art_slide'] = $art_slide;
 							} else{
 								$data_update['art_slide_r'] = $art_slide;
@@ -367,7 +369,7 @@ class  Article extends CI_Controller {
 							$data = $this->upload->data();
 							$art_supple = $data['file_name'];
 							
-							if(!in_array($source_article['art_status'], array(2,5,6,7,9))){	
+							if(!in_array($source_article->art_status, array(2,5,6,7,9))){	
 							$data_update['art_supple'] = $art_supple;
 							} else{
 								$data_update['art_supple_r'] = $art_supple;
@@ -391,7 +393,7 @@ class  Article extends CI_Controller {
 						{
 							$data = $this->upload->data();
 							$art_response = $data['file_name'];
-							if(!in_array($source_article['art_status'], array(2,5,6,7,9))){	
+							if(!in_array($source_article->art_status, array(2,5,6,7,9))){	
 							$data_update['art_response'] = $art_response;
 							} else{
 								$data_update['art_response_r'] = $art_response;
