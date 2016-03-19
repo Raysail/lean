@@ -109,7 +109,53 @@
 							
 							</p>
 						</div>
-                        <div class="tab-pane fade" id="tab2primary">Review</div>
+                        <div class="tab-pane fade" id="tab2primary">
+						<?php 
+if(!(empty($article_data[0]->art_cover_r) && empty($article_data[0]->art_menuscript_r) && empty($article_data[0]->art_figure_r) && empty($article_data[0]->art_slide_r) && empty($article_data[0]->art_supple_r) && empty($article_data[0]->art_response_r))){
+$art_cover = (!empty($article_data[0]->art_cover_r))?$article_data[0]->art_cover_r:$article_data[0]->art_cover; 
+$art_menuscript = (!empty($article_data[0]->art_menuscript_r))?$article_data[0]->art_menuscript_r:$article_data[0]->art_menuscript; 
+$art_figure = (!empty($article_data[0]->art_figure_r))?$article_data[0]->art_figure_r:$article_data[0]->art_figure; 
+$art_slide = (!empty($article_data[0]->art_slide_r))?$article_data[0]->art_slide_r:$article_data[0]->art_slide; 
+$art_supple = (!empty($article_data[0]->art_supple_r))?$article_data[0]->art_supple_r:$article_data[0]->art_supple; 
+$art_response = (!empty($article_data[0]->art_response_r))?$article_data[0]->art_response_r:$article_data[0]->art_response; 
+						     	if(!empty($art_cover) ||
+								!empty($art_menuscript) ||
+								!empty($art_figure) ||
+								!empty($art_slide) ||
+								!empty($art_supple) ||
+								!empty($art_response)
+								){?>
+							<h3>File Attached</h3>
+							<?php }?>
+							<p><?php if(!empty($art_cover)){?>
+								<a target="_blank"  href="<?php echo base_url().'upload/article/author-'.$article_data[0]->art_userid.'/'.$art_cover; ?>" > Cover letter</a>
+								<?php } ?>
+							</p>
+							
+							<p><?php if(!empty($art_menuscript)){?>
+								<a target="_blank"  href="<?php echo base_url().'upload/article/author-'.$article_data[0]->art_userid.'/'.$art_menuscript;?>">Manuscript</a>
+								<?php } ?>
+							</p>
+							<p><?php if(!empty($art_figure)){?>
+								<a target="_blank"  href="<?php echo base_url().'upload/article/author-'.$article_data[0]->art_userid.'/'.$art_figure; ?>" > Fighre & Table</a>
+								<?php } ?>
+							</p>			
+							<p><?php if(!empty($art_slide)){?>
+								<a target="_blank"  href="<?php echo base_url().'upload/article/author-'.$article_data[0]->art_userid.'/'.$art_slide; ?>" > Powerpoint Slide</a>
+								<?php } ?>
+							</p>			
+							<p><?php if(!empty($art_supple)){?>
+								<a target="_blank"  href="<?php echo base_url().'upload/article/author-'.$article_data[0]->art_userid.'/'.$art_supple; ?>" >Supplementary</a>
+								<?php } ?>
+							</p>			
+							<p><?php if(!empty($art_response)){?>
+								<a target="_blank"  href="<?php echo base_url().'upload/article/author-'.$article_data[0]->art_userid.'/'.$art_response; ?>" >  Response to Reviewer</a>
+								<?php } ?>
+							</p>
+								<?php } else{ ?>
+								Review
+								<?php } ?>
+						</div>
                         <div class="tab-pane fade" id="tab3primary">Proof</div>
                     </div>
                 </div>
