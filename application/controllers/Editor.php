@@ -1001,7 +1001,7 @@ Your password is: ".$user_data->user_invitepass."<br><br>";
 		
 		$select_filed = 'a.*,u.*';	
 		$tbl_name= 'tbl_article as  a ';	
-		$where_condition = "a.art_no='".$art_no."' AND (a.art_status='6' OR a.art_status='7' )"; 
+		$where_condition = "a.art_no='".$art_no."' AND (a.art_status='6' OR a.art_status='7' OR a.art_status='9')"; 
 							// array('a.art_no'=>$art_no,'a.art_status > '=>'0');
 		$order_by_field = 'a.art_id';
 		$order_by_type ='desc';
